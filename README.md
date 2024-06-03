@@ -256,3 +256,47 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
 - ![alt text](images/week1-derivatives/powerline_7.jpeg)
 - For n powerlines
 - ![alt text](images/week1-derivatives/powerline_8.jpeg)
+
+- **Square Loss** : In the above example we optimized a function where cost is a square of the distance. We were minimizing that cost.
+
+- ### Log Loss
+- **Example**: Suppose we have 3 coins, , 
+    - Coin1 is a biased coin, It has a probability of 70% for getting head, and 30% of getting tail.
+    - Coin2 is a fair coin, It has a probability of 50% for getting head, and 50% of getting tail. 
+    - Coin3 is a biased coin, It has a probability of 30% for getting head, and 70% of getting tail.  
+    - Our goal is to get 7 heads in a 10 coin toss. What is the best coin to achieve this.
+    - Lets say probability of a coins toss to be head is $p$, then for tail it will be $1-p$.
+    - the above statement can be written as  $p^{7}$ $(1-p)^{3}$ = g(p), now the goal is to maximize g(p).
+    - To find the maximum point we know that $\displaystyle \frac{\partial g}{\partial p}$ = 0
+    - Solving this equation we got $p^{6}$ $(1-p)^{2}$ $(7-10p)$ = 0 . to find p we need to find any one of these 3 terms are zero.
+        - if $p^{6}$ = 0, then its always tail, there is no head. So its not a possible solution.
+        - if $(1-p)$ = 0 then its $p$ =1 its always head, we will not get any tail here. So its not a possibel solution.
+        - if $(7-10p)$ = 0 then p = 0.7. So the best possible coin is the coin which has probability to get a head os 0.7 to maximize our use case.
+    - ![alt text](images/week1-derivatives/log_loss_1.jpeg)
+
+    - **Note**:
+        -  Product rule:  ${f(x)}$ = ${g(x)}$ * ${h(x)}$ then $\displaystyle \frac{\partial f}{\partial x}$ =  g * $\displaystyle \frac{\partial h}{\partial x}$  + h * $\displaystyle \frac{\partial g}{\partial x}$
+        - Calculate:  $\displaystyle \frac{\partial (1-p)^{3}}{\partial p}$
+            - let $u$ = 1-p
+            - So the above equation can be written as $\displaystyle \frac{\partial u^{3}}{\partial p}$ 
+            - By chain rule: $\displaystyle \frac{\partial u^{3}}{\partial p}$  = $\displaystyle \frac{\partial u ^{3}}{\partial u}$ * $\displaystyle \frac{\partial u }{\partial p}$
+            - = $3u^{2}$ * $\displaystyle \frac{\partial u }{\partial p}$
+            - = $3(1-p)^{2}$ * $\displaystyle \frac{\partial (1-p) }{\partial p}$
+            - = $3(1-p)^{2}$ * $(-1)$
+    
+- If you see this derivative quite complicated. It will beocme more complicated as the number of term grows.
+- **Another approach**: 
+    - Here we are trying to maximize the a function g(p) = $p^{7}$ $(1-p)^{3}$. 
+    - If at any point g(p) is maximum then at that point $log(g(p))$ also maximum.
+    - So instead of solving  $\displaystyle \frac{\partial p^{7}(1-p)^{3}}{\partial p}$ we can solve $\displaystyle \frac{\partial log(p^{7}(1-p)^{3})}{\partial p}$
+    - $log(p^{7}(1-p)^{3})$ = $7log(p)$ + $3log(1-p)$
+    - And we know $\displaystyle \frac{\partial log(p)}{\partial p}$ = $ \frac{1}{p}$
+    - ![alt text](images/week1-derivatives/log_loss_2.jpeg)
+    - in ML many we will calculate log of the probability in many use cases.
+    - in this approach we applied log as a cost function, this is called log loss function.
+    #### Why Log loss function
+    - If we have a situation where we need to calculate derivative of a product. most of the time derivative of product becomes more complicated. log of the product converts tpo a sum of log of individual terms.
+    - **Derivative of product is hard, derivative of sum is easy.**
+    - ![alt text](images/week1-derivatives/log_loss_3.jpeg)
+    - **Product of lot of tiny things are tiny**. If our ML model we have tiny probabilities like 0.00000023 then multiplying them will generate very tiny number. Computer's can't handle very tiny numbers.
+    - But log of a tiny number is a big negative number. computer can handle that well. 
