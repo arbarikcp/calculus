@@ -233,7 +233,7 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
 - Derivative is used to calculate the rate of change of function. But why do we need it in ML.
 - in ML models most of the time, we are looking for maximum and minimum of the function. We know that at maximum or minimum of the function, the derivative is zero.
 - Ther can be multiple minimum or multiple maximum of the graph.
-- ![alt text](images/week1-derivatives/minimum.jpeg) 
+- ![alt text](./images/week1-derivatives/minimum.jpeg) 
 
 - **Example**: 
 - lets assume we have 2 powerlines. We need to connect the powerlines to a house. and the cost of connecting the powerlines to the house is the square of the distance between them.
