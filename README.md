@@ -300,8 +300,8 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
       
 ![alt text](images/week1-derivatives/log_loss_3.jpeg)
     
-    - **Product of lot of tiny things are tiny**. If our ML model we have tiny probabilities like 0.00000023 then multiplying them will generate very tiny number. Computer's can't handle very tiny numbers.
-    - But log of a tiny number is a big negative number. computer can handle that well. 
+**Product of lot of tiny things are tiny**. If our ML model we have tiny probabilities like 0.00000023 then multiplying them will generate very tiny number. Computer's can't handle very tiny numbers.
+- But log of a tiny number is a big negative number. computer can handle that well. 
 
 # Week2- Gradients
 ### Tangent Plane
@@ -376,3 +376,32 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
 
 - Example
 ![alt text](images/week1-derivatives/gradient_12.jpeg)
+
+- **Drawbacks of Gradient descent**
+- With Gradient descent we will reach at local minima based on the starting point. We may not reach at global minima. 
+- So to avoid this we can start at multiple point and hope here is any one of the point will lead us to global minima. 
+
+![alt text](images/week1-derivatives/gradient_13.jpeg)
+
+### Gradient descent with 2 variables
+- Its simillar, we start with one point. find the gradiant at that point. based on our requirement we will go gradient ascent or gradient descent. 
+
+![alt text](images/week1-derivatives/gradient_14.jpeg)
+
+![alt text](images/week1-derivatives/gradient_15.jpeg)
+
+![alt text](images/week1-derivatives/gradient_16.jpeg)
+
+![alt text](images/week1-derivatives/gradient_17.jpeg)
+
+#### Least Squared error Loss function using gradient descent
+- Suppose we have few data points of (x, y) Only one predictor and one response variable.
+- We need to fit a linear line to this. To fit a line, we need to find m= slope and b= y intercept. 
+- We can take any random m and b as starting point. then calculate the squared error from actual value to predicted value. 
+- If a point is (x1, y1) and our lines slope y = mx + b, then at (x1, y1) our line will be (x1, mx1+b) . then loss = (mx1+b - y)<sup>2 </sup>
+
+![alt text](images/week1-derivatives/gradient_18.jpeg)
+
+- like this we need to caluclate (m2,b2) and repeat the process until m2, b2 doesn't change much. Or the loss beocmes 0.
+
+ ![alt text](images/week1-derivatives/gradient_19.jpeg)
