@@ -300,3 +300,74 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
     - ![alt text](images/week1-derivatives/log_loss_3.jpeg)
     - **Product of lot of tiny things are tiny**. If our ML model we have tiny probabilities like 0.00000023 then multiplying them will generate very tiny number. Computer's can't handle very tiny numbers.
     - But log of a tiny number is a big negative number. computer can handle that well. 
+
+# Week2- Gradients
+### Tangent Plane
+- When we plot a function with one variable like $f(x) $ = $x^{2}$, we can draw it in a 2d plane, y=  $x^{2}$ . And the derivative at any point is the slope of tangent line at that point.
+- If we have two variables  like $f(x,y) $ = $x^{2}$ + $y^{2}$, then it will be drawn as a 3d space. Instead of tangent line, we will have tangent plane.
+
+![alt text](images/week1-derivatives/gradient_1.jpeg)
+
+### Finding tangent plane
+- Suppose we want to find the tangent plane at x= 2, y=4
+- fix y=4, and find the tangent line at $f(x,4) $
+- fix x =2 and find the tangent line at $f(2,y) $
+- Then we can find the plane which contains these 2 tangent lines.
+
+![alt text](images/week1-derivatives/gradient_2.jpeg) 
+
+## Partial derivative
+### intution
+
+- if we have function of 2 variables, then We need to find the tangent plane. So do that we need to find the tangent line with respect each variable.
+- Fix one variable, visually it means, that variable doesn't matter. So we can cut the graph in that variable side, then it will become an 1d graph. here we can find the tangent line.
+- Finding the slope of tangent line with respect to one variable and making all other variable constant is called Partial derivative with respect to that variable.
+
+![alt text](images/week1-derivatives/gradient_3.jpeg) 
+
+![alt text](images/week1-derivatives/gradient_4.jpeg) 
+
+### Partial derivative
+![alt text](images/week1-derivatives/pderivative_1.jpeg)
+- Steps for partial derivative
+![alt text](images/week1-derivatives/pderivative_2.jpeg) 
+
+- example: 
+- let $f(x,y) $ = $3x^{2}$ $y^{3}$
+- to calucltae partial derivative with respect to x, we need to consider all other variable as constant. here $y^{3}$ will be treated as constant. 
+- $\displaystyle \frac{\partial f}{\partial x}$ = $3 * (2x)$ $y^{3}$ = $6xy^{3}$
+- to calucltae partial derivative with respect to y, we need to consider all other variable as constant. here $3x^{2}$ will be treated as constant. 
+- $\displaystyle \frac{\partial f}{\partial y}$ = $3x^{2}$  $3y^{2}$ = $9x^{2}y^{2}$
+
+### Gradient ($\nabla $)
+- Its the vectors where each entry is the partial derivative with respect to each variable. represented by symbol $\nabla $
+![alt text](images/week1-derivatives/gradient_5.jpeg)
+- **Finding maxima/minima in a function of 2 variables**
+- It is Simillar to function of single variable, where we solve the equation $\displaystyle \frac{\partial f}{\partial x}$  = 0
+- In case of 2 variables, we need to find partial derivative with respect to  each variable, each of theses partial derivative must be 0 for maxima or minima. then we need to solve the system of lenear equation to find 2 variables.
+![alt text](images/week1-derivatives/gradient_6.jpeg)
+- Example:
+- We have a function of 2 variable x, y. We need to find the minima in that function.
+- Calculate partial derivative with respect to  each variable, an da point to be minima or maxima , derivative at that point must be 0.  then solve the equation.
+- $\displaystyle \frac{\partial f}{\partial x}$ =  $ \frac{-1}{90} x (3x-12)y^{2}(y-6)$ = 0. to make this equation 0, any one term among these 4 is 0.
+- Simillarly $\displaystyle \frac{\partial f}{\partial y}$ =  $ \frac{-1}{90} x^{2} (x-6)y(3y-12)$ = 0
+![alt text](images/week1-derivatives/gradient_7.jpeg)
+- These 2 equation gave us a lot of points where derivative is zero. It can be maxima or minima. So we need to analyze and identify the minima .
+- ![alt text](images/week1-derivatives/gradient_8.jpeg)
+
+## Gradient Descent
+- Sometime solving this way by taking partial derivative is too complicated, mostly when the number of variable increases.
+- Gradient descent is another iterative approach to find the minima/maxima of a complicated multi variable function. 
+
+- **Approach**:
+- Start from any point, and check the slope at that point (by taking derivative at that point) . based on the slope move starting point.
+![alt text](images/week1-derivatives/gradient_9.jpeg)
+
+- Sometime slope can be too steep, because of that our iterative step will move a big step. which will be too chaotic. We need to control the rate of this iterative movement.
+- So in that case instead of moving the starting point using slope, we need to multiply slope with a small variable called leraning rate.
+-  ![alt text](images/week1-derivatives/gradient_10.jpeg)
+- As the learning rate is small constant like 0.01. if slope is higher it will move the starting point relative higher than in case of less slope.
+![alt text](images/week1-derivatives/gradient_11.jpeg) 
+
+- Example
+![alt text](images/week1-derivatives/gradient_12.jpeg)
