@@ -297,7 +297,9 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
     #### Why Log loss function
     - If we have a situation where we need to calculate derivative of a product. most of the time derivative of product becomes more complicated. log of the product converts tpo a sum of log of individual terms.
     - **Derivative of product is hard, derivative of sum is easy.**
+      
 ![alt text](images/week1-derivatives/log_loss_3.jpeg)
+    
     - **Product of lot of tiny things are tiny**. If our ML model we have tiny probabilities like 0.00000023 then multiplying them will generate very tiny number. Computer's can't handle very tiny numbers.
     - But log of a tiny number is a big negative number. computer can handle that well. 
 
