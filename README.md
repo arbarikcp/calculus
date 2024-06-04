@@ -328,8 +328,11 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
 ![alt text](images/week1-derivatives/gradient_4.jpeg) 
 
 ### Partial derivative
+
 ![alt text](images/week1-derivatives/pderivative_1.jpeg)
+
 - Steps for partial derivative
+
 ![alt text](images/week1-derivatives/pderivative_2.jpeg) 
 
 - example: 
