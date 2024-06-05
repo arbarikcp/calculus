@@ -60,56 +60,81 @@
 - Derivative is the rate of change of f for a tiny change of x.
 - lets try to calulate manually the $\frac{\Delta{f}}{\Delta{x}}$ when x = 1.
 - For this takes take $\Delta{x}$ starting from 1.0 to reducing it to 1/1000
-- ![alt text](images/week1-derivatives/der_10.jpeg)
+
+![alt text](images/week1-derivatives/der_10.jpeg)
+
 - here as we see as the change in x goes to very small. the slope is going towards 2, which is 2 * 1  that correct, derivative of f(x) = $x^{2}$   is 2x.
-- ![alt text](images/week1-derivatives/der_11.jpeg)
+
+![alt text](images/week1-derivatives/der_11.jpeg)
 
 #### Derivative of Cubic function
 - y=f(x) = $x^{3}$
 - lets try to calulate manually the $\frac{\Delta{f}}{\Delta{x}}$ when x = 1.
 - For this takes take $\Delta{x}$ starting from 1.0 to reducing it to 1/1000
-- ![alt text](images/week1-derivatives/der_12.jpeg)
+
+![alt text](images/week1-derivatives/der_12.jpeg)
+
 - lets calculate mathematically
-- ![alt text](images/week1-derivatives/der_13.jpeg)
+
+![alt text](images/week1-derivatives/der_13.jpeg)
+
 - as $\Delta{x}$  becomes very small , tends to 0. then the terms, 3x $\Delta{x}$ and $\Delta{x} ^{2}$ becomes 0. 
 - derivative of f(x) = $x^{3}$ is 3 * $x^{2}$
 
 #### Derivative of other power function
 - let y=f(x) = $x^{-1}$
 - Following the previous manual approach, lets find out the drivative of this function at x = 1.
-- ![alt text](images/week1-derivatives/der_14.jpeg) 
+
+![alt text](images/week1-derivatives/der_14.jpeg) 
+
 - calculating mathematically 
--  ![alt text](images/week1-derivatives/der_15.jpeg) 
+
+![alt text](images/week1-derivatives/der_15.jpeg) 
 
 #### Derivative of Power function
 - let y=f(x) = $x^{n}$
-- ![alt text](images/week1-derivatives/der_16.jpeg) 
+
+![alt text](images/week1-derivatives/der_16.jpeg) 
 
 - Graphical tool for common derivatives: https://www.coursera.org/learn/machine-learning-calculus/ungradedWidget/fwPaZ/common-derivatives
 
 ### Inverse function
 - A function `g` is called inverse of a function `f` if  g (f(x)) = x
-- ![alt text](images/week1-derivatives/der_17.jpeg)
+
+![alt text](images/week1-derivatives/der_17.jpeg)
+
 - Example: lets take a function f(x) =  $x^{2}$  and g(x) , its reverse function ,    g(x) = $\sqrt{x}$
-- ![alt text](images/week1-derivatives/der_18.jpeg)
+
+![alt text](images/week1-derivatives/der_18.jpeg)
+
 - **Derivative of the inverse function**: 
 - in below example, we are trying to calculate slope at x = 1. Here we can see  $\Delta{g}$ = $\Delta{x}$  and  $\Delta{y}$ = $\Delta{f}$
 - Slope of inverse function is 
--  ![alt text](images/week1-derivatives/der_19.jpeg) 
+
+![alt text](images/week1-derivatives/der_19.jpeg) 
+
 - **Example**:
-- ![alt text](images/week1-derivatives/der_20.jpeg) 
+
+![alt text](images/week1-derivatives/der_20.jpeg) 
+
 #### Derivative of Trigonometric function
-- ![alt text](images/week1-derivatives/SIn_1.jpeg)
-- ![alt text](images/week1-derivatives/SIn_2.jpeg)
-- for Sin function, f(x) = sin(x)
+
+![alt text](images/week1-derivatives/SIn_1.jpeg)
+
+![alt text](images/week1-derivatives/SIn_2.jpeg)
+
+for Sin function, f(x) = sin(x)
 - If we try to see the slope of Sin(x) at various points like -$\pi$,-$\pi$/2 , 0, $\pi$/2 . it is -1, 0,1,0
 - If we see the value of Cos(x) at these points then we will find that value of cos(x) is exactly same as slop of sinx.
-- ![alt text](images/week1-derivatives/sin_der.jpeg)
+
+![alt text](images/week1-derivatives/sin_der.jpeg)
+
 - So we can say f(x) = sinx then $\displaystyle \frac{\partial f}{\partial x}$ = cos(x)
 
 - Simillarly f(x) = cos(x) then $\displaystyle \frac{\partial f}{\partial x}$ = -sin(x)
 
-- ![alt text](images/week1-derivatives/cos_Der.jpeg)
+![alt text](images/week1-derivatives/cos_Der.jpeg)
+
 - for proof please check, https://www.coursera.org/learn/machine-learning-calculus/lecture/CcD2l/derivative-of-trigonometric-functions
 
 ### Euler's number (e)
@@ -119,55 +144,75 @@
 
 #### Understanding Euler's number
 - you have $1. you have to deposit your money to bank to get intrests. among these 3 banks which one is better. and at the end of a year where your money will grow more.
-- ![alt text](images/week1-derivatives/euler_1.jpeg)
-- lets calculate
-- ![alt text](images/week1-derivatives/euler_2.jpeg)
-- ![alt text](images/week1-derivatives/euler_3.jpeg)
+
+![alt text](images/week1-derivatives/euler_1.jpeg)
+
+lets calculate
+
+![alt text](images/week1-derivatives/euler_2.jpeg)
+
+![alt text](images/week1-derivatives/euler_3.jpeg)
 
 - What if a bank said if it will 1/12th of intrest for every month.
-- ![alt text](images/week1-derivatives/euler_4.jpeg)
+
+![alt text](images/week1-derivatives/euler_4.jpeg)
 - at end of first month opur principal is (1 + $\frac{1}{12}$)
 - at end of second month intrest will be 
 $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = (1 + $\frac{1}{12}$) + $\frac{1}{12}$(1 +$\frac{1}{12}$) =  $(1 + \frac{1}{12})^{2}$
 - Like this at end of the year, it will become $(1 + \frac{1}{12})^{12}$
 
 - Now if this interval reduced to small. with n equal intervals, then 
-- ![alt text](images/week1-derivatives/euler_5.jpeg)
+
+![alt text](images/week1-derivatives/euler_5.jpeg)
 
 - If we reduced it to a very small number then 
-- ![alt text](images/week1-derivatives/euler_6.jpeg)
+
+![alt text](images/week1-derivatives/euler_6.jpeg)
 
 - $(1 + \frac{1}{\infty})^{\infty}$  = e = 2.718
 
 #### Derivative of $e^{x}$
 - $e^{x}$ is special, because derivative of $e^{x}$ is $e^{x}$
-- ![alt text](images/week1-derivatives/euler_7.jpeg)
+
+![alt text](images/week1-derivatives/euler_7.jpeg)
+
 - lets calculate manually the slope of $e^{x}$ line at x = 2.
-- ![alt text](images/week1-derivatives/euler_8.jpeg)
+
+![alt text](images/week1-derivatives/euler_8.jpeg)
 
 ### Derivative of $\log(x)$
 - $\log(x)$ is an inverse function to $e^{x}$
 - i.e: $e^{log(x)}$ = $x$
 - $e^{log(3)}$ = $3$
-- ![alt text](images/week1-derivatives/euler_9.jpeg)
+
+![alt text](images/week1-derivatives/euler_9.jpeg)
+
 - We know derivative of f(x) = $e^{x}$ is $e^{x}$.
 - Also we know that if g(x) is inverse of f(x) then derivative of g(x) = 1/ derivative of f(x)
 - Applying these 2 principle we can find the derivative of f(x) = ${log(x)}$
-- ![alt text](images/week1-derivatives/euler_10.jpeg)
+
+![alt text](images/week1-derivatives/euler_10.jpeg)
 
 ### Non-differentiable function
 - For a function to be differentiable, the drivative has to exist at every point in the interval.
     -  at every point on the function curve we should be able to draw a well defined tanget line. We should be able to calculate slope at every point on the curve.
 - let take another function as below. at point 0, there is no well defined tanget/slope. So at point 0 there is no derivative. 
--  ![alt text](images/week1-derivatives/der_21.jpeg)
+
+![alt text](images/week1-derivatives/der_21.jpeg)
+
 - Any function graph which look like there is a corner , doesn't have derivative.
 - **Example 2** Lets take another example, the below function is not continuous. So it doesn't have derivative at -1.
--   ![alt text](images/week1-derivatives/der_22.jpeg)
+
+![alt text](images/week1-derivatives/der_22.jpeg)
+
 -  **Example 3** 
 - In this example it seems there is tanget at every point. but at 0, tanget is y axis. So its slope will be 0. Any function which has a slope along with vertical axis is not differentiable.
--  ![alt text](images/week1-derivatives/der_23.jpeg)
+
+![alt text](images/week1-derivatives/der_23.jpeg)
+
 - There are 3 type of functions which are non-differentiable.
--  ![alt text](images/week1-derivatives/der_24.jpeg)
+
+![alt text](images/week1-derivatives/der_24.jpeg)
 
 ### Derivative Properties
 - We learned derivative of few common functions. For derivative of complicated functions we can piggyback on derivative of common functions using derivative properties.
@@ -176,9 +221,13 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
  - if f = 4 *g then  $\displaystyle \frac{\partial f}{\partial x}$ = 4 * $\displaystyle \frac{\partial g}{\partial x}$
 - derivative of f(x) = x<sup>2</sup> = 2x
 - derivative of f(x) = 2 x<sup>2</sup> = 2 * derivative of x<sup>2</sup> = 2* 2x = 4x
-- ![alt text](images/week1-derivatives/der_25.jpeg) 
+
+![alt text](images/week1-derivatives/der_25.jpeg) 
+
 - another example
-- ![alt text](images/week1-derivatives/der_26.jpeg) 
+
+![alt text](images/week1-derivatives/der_26.jpeg) 
+
 #### Sum Rule
 - if ${f(x)}$ = ${g(x)}$ + ${h(x)}$ then $\displaystyle \frac{\partial f}{\partial x}$ = $\displaystyle \frac{\partial g}{\partial x}$ + $\displaystyle \frac{\partial h}{\partial x}$
 
@@ -186,7 +235,8 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
 - if ${f(x)}$ = ${g(x)}$ * ${h(x)}$ then $\displaystyle \frac{\partial f}{\partial x}$ =  g * $\displaystyle \frac{\partial h}{\partial x}$  + h * $\displaystyle \frac{\partial g}{\partial x}$
 - Lets calculate it by a digram,In a small time ${\Delta{t}}$  a small increment of ${\Delta{h}}$ for h also incresed by ${\Delta{g}}$ for g.
 - Now as  ${f(x)}$ = ${g(x)}$ * ${h(x)}$ , derivative of  ${f(x)}$ = 
-- ![alt text](images/week1-derivatives/der_27.jpeg) 
+
+![alt text](images/week1-derivatives/der_27.jpeg) 
 
 #### Chain Rule
 **Intution**: 
@@ -196,9 +246,12 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
     - The rate of change of tempearture with respect to height = $\displaystyle \frac{\partial T}{\partial h}$
 
 - Now if I want to calculate rate of change of temperature(T) with respect to time (t)  $\displaystyle \frac{\partial T}{\partial t}$ = $\displaystyle \frac{\partial T}{\partial h}$ * $\displaystyle \frac{\partial h}{\partial t}$
+
 ![alt text](images/week1-derivatives/der_28.jpeg)
 - Lets plot this initution on a graph
-- ![alt text](images/week1-derivatives/der_29.jpeg)
+
+![alt text](images/week1-derivatives/der_29.jpeg)
+
 - In this case height h is a function of time t
 - Temperature T is a function of height h
 - at time t, we are at height h(t) at that height temperature is f(h)
@@ -207,7 +260,7 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
     -  ${\Delta{t}}$ -> ${\Delta{h}}$ -> ${\Delta{T}}$
 - when that change  ${\Delta{t}}$ moves very small
 
-  ![alt text](images/week1-derivatives/der_30.jpeg) 
+![alt text](images/week1-derivatives/der_30.jpeg) 
 
 -**Formula**:
 - Like we saw above suppose we have composition function.
@@ -227,35 +280,51 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
 
 **Lagrange's notation**  
 - first one is Leibniz notation, second one is Lagrange's notation 
-- ![alt text](images/week1-derivatives/der_30.jpeg) 
+
+![alt text](images/week1-derivatives/der_30.jpeg) 
 
 ## Optimization
 - Derivative is used to calculate the rate of change of function. But why do we need it in ML.
 - in ML models most of the time, we are looking for maximum and minimum of the function. We know that at maximum or minimum of the function, the derivative is zero.
 - Ther can be multiple minimum or multiple maximum of the graph.
-- ![alt text](./images/week1-derivatives/minimum.jpeg) 
+
+![alt text](./images/week1-derivatives/minimum.jpeg) 
 
 - **Example**: 
 - lets assume we have 2 powerlines. We need to connect the powerlines to a house. and the cost of connecting the powerlines to the house is the square of the distance between them.
-- ![alt text](images/week1-derivatives/powerline_1.jpeg)
+
+![alt text](images/week1-derivatives/powerline_1.jpeg)
+
 - The goal is to find the correct location for the house to minimize the cost to conenct to both powerlines.
-- ![alt text](images/week1-derivatives/powerline_2.jpeg)
+
+![alt text](images/week1-derivatives/powerline_2.jpeg)
+
 - if we visulaize the cost in terms of area, then .
-- ![alt text](images/week1-derivatives/powerline_3.jpeg)
+
+![alt text](images/week1-derivatives/powerline_3.jpeg)
+
 - If we put the house near Origin then cost can be visualize as
-- ![alt text](images/week1-derivatives/powerline_4.jpeg)
+
+![alt text](images/week1-derivatives/powerline_4.jpeg)
 - If we put the house near the second powerline then the cost can be visualize as
-- ![alt text](images/week1-derivatives/powerline_5.jpeg)
+
+![alt text](images/week1-derivatives/powerline_5.jpeg)
+
 - The goal is to find the optimum place for the house to minimize the cost. SO we need to find the minimum point on the function 
 
     $(x-a)^{2}$ + $(x-b)^{2}$ -> where  a and b are distance of 2 powerlines from origin.
 - To find minimum we need to find a point where derivative of  $(x-a)^{2}$ + $(x-b)^{2}$  is 0.
 - If we solve this equation then x = (a +b ) /2
-- ![alt text](images/week1-derivatives/powerline_6.jpeg)   
+
+![alt text](images/week1-derivatives/powerline_6.jpeg)   
+
 - Simillarly if we have 3 powerlines. 
-- ![alt text](images/week1-derivatives/powerline_7.jpeg)
+
+![alt text](images/week1-derivatives/powerline_7.jpeg)
+
 - For n powerlines
-- ![alt text](images/week1-derivatives/powerline_8.jpeg)
+
+![alt text](images/week1-derivatives/powerline_8.jpeg)
 
 - **Square Loss** : In the above example we optimized a function where cost is a square of the distance. We were minimizing that cost.
 
@@ -272,7 +341,7 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
         - if $p^{6}$ = 0, then its always tail, there is no head. So its not a possible solution.
         - if $(1-p)$ = 0 then its $p$ =1 its always head, we will not get any tail here. So its not a possibel solution.
         - if $(7-10p)$ = 0 then p = 0.7. So the best possible coin is the coin which has probability to get a head os 0.7 to maximize our use case.
-    - ![alt text](images/week1-derivatives/log_loss_1.jpeg)
+![alt text](images/week1-derivatives/log_loss_1.jpeg)
 
     - **Note**:
         -  Product rule:  ${f(x)}$ = ${g(x)}$ * ${h(x)}$ then $\displaystyle \frac{\partial f}{\partial x}$ =  g * $\displaystyle \frac{\partial h}{\partial x}$  + h * $\displaystyle \frac{\partial g}{\partial x}$
@@ -291,7 +360,9 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
     - So instead of solving  $\displaystyle \frac{\partial p^{7}(1-p)^{3}}{\partial p}$ we can solve $\displaystyle \frac{\partial log(p^{7}(1-p)^{3})}{\partial p}$
     - $log(p^{7}(1-p)^{3})$ = $7log(p)$ + $3log(1-p)$
     - And we know $\displaystyle \frac{\partial log(p)}{\partial p}$ = $ \frac{1}{p}$
-    - ![alt text](images/week1-derivatives/log_loss_2.jpeg)
+
+![alt text](images/week1-derivatives/log_loss_2.jpeg)
+
     - in ML many we will calculate log of the probability in many use cases.
     - in this approach we applied log as a cost function, this is called log loss function.
     #### Why Log loss function
