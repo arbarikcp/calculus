@@ -417,19 +417,26 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
 
 ### Gradient ($\nabla $)
 - Its the vectors where each entry is the partial derivative with respect to each variable. represented by symbol $\nabla $
+
 ![alt text](images/week1-derivatives/gradient_5.jpeg)
+
 - **Finding maxima/minima in a function of 2 variables**
 - It is Simillar to function of single variable, where we solve the equation $\displaystyle \frac{\partial f}{\partial x}$  = 0
 - In case of 2 variables, we need to find partial derivative with respect to  each variable, each of theses partial derivative must be 0 for maxima or minima. then we need to solve the system of lenear equation to find 2 variables.
+
 ![alt text](images/week1-derivatives/gradient_6.jpeg)
+
 - Example:
 - We have a function of 2 variable x, y. We need to find the minima in that function.
 - Calculate partial derivative with respect to  each variable, an da point to be minima or maxima , derivative at that point must be 0.  then solve the equation.
 - $\displaystyle \frac{\partial f}{\partial x}$ =  $ \frac{-1}{90} x (3x-12)y^{2}(y-6)$ = 0. to make this equation 0, any one term among these 4 is 0.
 - Simillarly $\displaystyle \frac{\partial f}{\partial y}$ =  $ \frac{-1}{90} x^{2} (x-6)y(3y-12)$ = 0
+
 ![alt text](images/week1-derivatives/gradient_7.jpeg)
+
 - These 2 equation gave us a lot of points where derivative is zero. It can be maxima or minima. So we need to analyze and identify the minima .
-- ![alt text](images/week1-derivatives/gradient_8.jpeg)
+
+![alt text](images/week1-derivatives/gradient_8.jpeg)
 
 ## Gradient Descent
 - Sometime solving this way by taking partial derivative is too complicated, mostly when the number of variable increases.
