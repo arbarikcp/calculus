@@ -483,3 +483,170 @@ $\frac{1}{12}$(1 +$\frac{1}{12}$).  So total principal at end of second month = 
 - like this we need to caluclate (m2,b2) and repeat the process until m2, b2 doesn't change much. Or the loss beocmes 0.
 
  ![alt text](images/week1-derivatives/gradient_19.jpeg)
+
+ # Week3 - Optimizationin Neural network
+ ### Regression with Perceptron
+- **Preceptron**: is a unit which some inputs and predicts our required output.
+    - For example, we have 2 input datapoints about houses. 1. size, 2. number of rooms. based on these 2 input we need to predict the price of the house.
+    - every data set has these 2 input values. lets say them $ {x1} $ and $ {x2} $
+    - Preceptron is a calculation unit which takes these 2 inputs and do some calculation on it and finds the output.
+
+ ![alt text](images/week3-optimization/optimization_1.jpeg)
+
+- All these inputs $ {x1} $ and $ {x2} $ doesn't affect the house price in the same way. So we have different weightage for each input. 
+- So the goal here is find best $ {w1} $ and $ {w2} $ and $ {b} $. SO that our predicted value from preptron is as close as actual value.
+
+![alt text](images/week3-optimization/optimization_2.jpeg)
+
+- In real world we will have 1000's of input parameter. $ {x1} $ ... $ {xn} $, we need to find $ {w1} $ ... $ {wn} $
+
+![alt text](images/week3-optimization/optimization_3.jpeg)
+
+### Gradient descent to minimize the loss function
+- Initially we will take any $ {w1} $ and $ {w2} $ and $ {b} $ . and predict $\hat{y}$ .
+- that $\hat{y}$ may or may notbe close to the actual ${y}$ 
+- We need to calculate sqaured loss , I mean how much $\hat{y}$ deviates from ${y}$ .
+- then we need to change $ {w1} $ and $ {w2} $ and $ {b} $ accrondingly for next/better  $ {w1} $ and $ {w2} $ and $ {b} $ which will produce better $\hat{y}$
+
+- Lets recall. We know that derivative respect to that variable gives us the slope/descendant direction of that point. 
+- Suppose  $ {L} $ is our loss function. , if we want to get better $ {w1} $ then better $ {w1} $ =  $ {w1} $ - derivativeof ( $ {L}$ ) with respect to w1.
+    - we will not reduce direct derivative as it may take a bigger jump. we will multiply with a small learning rate, so that $ {w1} $ changes slowly.
+
+![alt text](images/week3-optimization/optimization_4.jpeg)
+
+- Suppose we need to calculate $\displaystyle \frac{\partial L}{\partial w1}$
+    - ${L}$ depends on $\hat{y}$
+    - $\hat{y}$ depends on ${w1}$
+    - So by chain rule $\displaystyle \frac{\partial L}{\partial w1}$ = $\displaystyle \frac{\partial L}{\partial \hat{y}}$ . $\displaystyle \frac{\partial \hat{y}}{\partial w1}$
+
+![alt text](images/week3-optimization/optimization_5.jpeg).
+
+- We need to calulate these 4 unique derivative to calculate next ${w1}$ and ${w2}$ and ${b}$
+
+- **Lets calculate the partial derivatives**: 
+
+![alt text](images/week3-optimization/optimization_6.jpeg)
+
+- Why loss function has been divided by 2. the reason was to cancel it while calculating  $\displaystyle \frac{\partial L}{\partial \hat{y}}$. for ease of calculation.
+
+- now lets use all these derivative to calculate our required terms.
+
+![alt text](images/week3-optimization/optimization_7.jpeg)
+
+- Lets use this to calculate next  $ {w1}$, $ {w2}$ and $ {b}$
+
+![alt text](images/week3-optimization/optimization_8.jpeg)
+
+### Classification with perceptron
+
+- In previous linear regression example, the we are predcting house price. It can be any number. But in classifcation problem you have to classify it as yes/no. like email is spam or not. its 0/1.  So our output must be within 0 - 1.
+
+- To achieve this we can pass our reponse value ${\hat{y}}$ to an activation which will reduce the value to between 0 and 1.  
+
+![alt text](images/week3-optimization/optimization_9.jpeg)
+
+- Formula for sigmoid function is 
+
+![alt text](images/week3-optimization/optimization_10.jpeg)
+
+### Sigmoid function
+- Sigmoid function takes any number as input and convert it to a number between 0 to 1.
+- sigmoid of 0 = 1 / (1 + e<sup>0</sup>) = 1 / (1+1) = 1/2
+- sigmoid of a large -ve number is close to 0.
+- sigmoid of a large +ve number is close to 0.
+
+![alt text](images/week3-optimization/sigmoid.jpeg)
+
+It has another special property,  
+**$\displaystyle \frac{\partial \sigma(z)}{\partial z}$ = $\sigma(z)$ (1 - $\sigma(z)$)**
+- proof https://www.coursera.org/learn/machine-learning-calculus/lecture/E7NIR/classification-with-perceptron-the-sigmoid-function
+
+### Gradienet descent for classification with Perceptron
+- In classification problem, we have an activation function. Sigmoid activation function is being applied on the output , then it will output the result between 0 and 1.
+- We need to calculate the loss function on that output. In classification problem, the loss function we need to use it **Log loss**.
+
+![alt text](images/week3-optimization/optimization_11.jpeg)
+
+- here also, in simillar way , after finding the log loss, we need to find the derivative of L with respect o all required variables like $w1$, $w2$, $b$.
+
+![alt text](images/week3-optimization/optimization_12.jpeg)
+
+- In the simillar way we need to calculate next $w1$, $w2$, $b$
+- To do that lets calculate the simillar derivatives as we did before.
+
+![alt text](images/week3-optimization/optimization_13.jpeg)
+
+- Lets calculate derivative of log loss with respect to $\hat y$
+- we know derivative of log(x) with respect to x = 1/x
+
+![alt text](images/week3-optimization/optimization_14.jpeg)
+
+- lets calculate other 3 derivatives
+- We know that  **$\displaystyle \frac{\partial \sigma(z)}{\partial z}$ = $\sigma(z)$ (1 - $\sigma(z)$)**
+
+![alt text](images/week3-optimization/optimization_15.jpeg)
+
+- Use these 4 derivatives to calulate deriate of Log loss with respect to $w1$, $w2$, $b$
+
+![alt text](images/week3-optimization/optimization_16.jpeg)
+
+- this will reduce to 
+
+![alt text](images/week3-optimization/optimization_17.jpeg)
+
+- Now apply this to calculate new value of $w1$, $w2$, $b$
+
+![alt text](images/week3-optimization/optimization_18.jpeg)
+
+### Neural network
+- It is a combintaion of multiple perceptrons , arranged in layer. output of one layer is being feed to another layer.
+- Lets take the same classification example.
+- In below example, we have 2 layers. 1st layer has 2 perceptron 
+    - Each perceptron takes the same input (x1, x2 and b) . but each perceptron has different weights and biases.
+- The output from each perceptron of first layer, will be fed to perceptron on second layer. Then that perceptron will use its own weight and bias. it will continue like this.
+- As it is a classification problem, we will use Log loss function and sigmoid as our activation function.
+
+![alt text](images/week3-optimization/optimization_19.jpeg)
+
+- **Calculating gradienet descent in 2 layer neural networks**
+
+![alt text](images/week3-optimization/optimization_20.jpeg)
+
+- From $x1$ $w11$ we calculated $z1$ -> 
+    - on $z1$ we have applied sigmoid to get $a1$ -> 
+        - $a1$ and $w1$ we got $z$ -> on $z$ we have applied sigmoid to get $\hat y$ -> 
+            - $\hat y$ is models response -> from here we will calulate loss. L( $y$, $\hat y$)
+
+- As we have 2 layers, each layer has their own perceptrons, each perceptron has weight and biases. After calculating the Loss of $\hat y$ we need to adjust the weight and biases of every perceptron.
+
+- To adjust w11, we need to caluclate $\displaystyle \frac{\partial L}{\partial w11}$
+- To adjust w12, we need to caluclate $\displaystyle \frac{\partial L}{\partial w12}$
+- To adjust b1, we need to caluclate $\displaystyle \frac{\partial L}{\partial b1}$
+
+- Notice here, L is not directly depend on $w11$. So to calculate $\displaystyle \frac{\partial L}{\partial w11}$ 
+    - L depends on $\hat y$, so we need to calculate $\displaystyle \frac{\partial L}{\partial \hat y}$
+    - ${\hat y}$ depends on $z$ So we need to calculate $\displaystyle \frac{\partial\hat y}{\partial z}$
+    - $z$ depends on $a1$, So we need to calculate $\displaystyle \frac{\partial  z}{\partial a1}$
+    - $a1$ depends on $z1$, So we need to calculate $\displaystyle \frac{\partial  a1}{\partial z1}$
+    - $z1$ depends on $w11$, So we need to calculate $\displaystyle \frac{\partial  z1}{\partial w11}$
+
+- So  $\displaystyle \frac{\partial L}{\partial w11}$  = $\displaystyle \frac{\partial  z1}{\partial w11}$ . $\displaystyle \frac{\partial  a1}{\partial z1}$ . $\displaystyle \frac{\partial  z}{\partial a1}$ . $\displaystyle \frac{\partial\hat y}{\partial z}$ . $\displaystyle \frac{\partial L}{\partial \hat y}$ 
+ 
+- Calculate all the required derivatives for $w11$
+
+![alt text](images/week3-optimization/optimization_21.jpeg)
+
+- Simillarly we can calculate gradienet descent for all $w$  and $b$. lets do it for $b$, calculate  $\displaystyle \frac{\partial L}{\partial b1}$
+
+![alt text](images/week3-optimization/optimization_22.jpeg)
+
+- gradienet descent for all the weights and biases of the 1st layer for above 2 layer neural network is 
+
+![alt text](images/week3-optimization/optimization_23.jpeg)
+
+- **gradient descent of 2nd layer's weight and biases**
+- We need to calculate $\displaystyle \frac{\partial L}{\partial w1}$
+
+![alt text](images/week3-optimization/optimization_24.jpeg)
+
+![alt text](images/week3-optimization/optimization_25.jpeg)
